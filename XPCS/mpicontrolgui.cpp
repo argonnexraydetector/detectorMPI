@@ -313,11 +313,9 @@ void mpiControlGui::sendMessages()
 
         emit(sendCommand(
            QString("IOC setParameter PW_DataSourceType 1 int %1\n").
-                    arg(last_image_message.gui.input_type)
+//                    arg(last_image_message.gui.input_type)
+                    arg(current_gui_state.message.input_type)
                     ));
-
-
-
 
         emit(sendCommand(
            QString("IOC setParameter PW_NumTestImages 1 int %1\n").
@@ -356,9 +354,9 @@ void mpiControlGui::sendMessages()
 
         emit(sendCommand(
            QString("IOC setParameter PW_OutputFileType 1 int %1\n").
-                    arg(last_image_message.gui.output_type)
+//                    arg(last_image_message.gui.output_type)
+                    arg(current_gui_state.message.output_type)
                     ));
-
 
         emit(sendCommand(
            QString("IOC setParameter PW_OutputFilePath 1 QString %1\n").
